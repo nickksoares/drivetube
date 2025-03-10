@@ -169,9 +169,9 @@ O Mulakintola nasceu da necessidade de uma interface intuitiva para consumo de c
 ---
 
 <div align="center">
-  <p>Desenvolvido com 💛 por <a href="https://github.com/seu-usuario">sua equipe</a></p>
+  <p>Desenvolvido com 💛 por <a href="https://github.com/asimovtechsolutions">ASIMOV TECH</a></p>
   
-  <a href="https://github.com/seu-usuario/mulakintola/issues">Reportar Bug</a>
+  <a href="https://github.com/dougdotcon/mulakintola/issues">Reportar Bug</a>
   •
-  <a href="https://github.com/seu-usuario/mulakintola/issues">Solicitar Feature</a>
+  <a href="https://github.com/dougdotcon/mulakintola/issues">Solicitar Feature</a>
 </div>
