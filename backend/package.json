@@ -1,7 +1,7 @@
 {
-  "name": "mulakintola-backend",
+  "name": "drivetube-backend",
   "version": "1.0.0",
-  "description": "Backend para o sistema Mulakintola",
+  "description": "Backend para o sistema drivetube",
   "main": "src/server.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",

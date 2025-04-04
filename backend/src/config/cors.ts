@@ -6,7 +6,7 @@ export const corsOptions: FastifyCorsOptions = {
     ? true // Permite todas as origens em desenvolvimento
     : [
       'http://localhost:3000', // Frontend em desenvolvimento
-      'https://mulakintola.vercel.app' // Frontend em produção
+      'https://drivetube.vercel.app' // Frontend em produção
     ],
   credentials: true
 } 

@@ -61,8 +61,8 @@ export default function SavedFoldersPage() {
         <div className="flex flex-col items-center">
           <div className="relative w-24 h-24 mb-4">
             <Image
-              src="/images/mulakintola-logo.png"
-              alt="Mulakintola Logo"
+              src="/images/drivetube-logo.png"
+              alt="drivetube Logo"
               fill
               className="object-contain animate-pulse"
               priority
@@ -80,8 +80,8 @@ export default function SavedFoldersPage() {
       <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-br from-yellow-50 to-white">
         <div className="relative w-24 h-24 mb-4">
           <Image
-            src="/images/mulakintola-logo.png"
-            alt="Mulakintola Logo"
+            src="/images/drivetube-logo.png"
+            alt="drivetube Logo"
             fill
             className="object-contain"
             priority

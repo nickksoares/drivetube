@@ -41,8 +41,8 @@ export default function VideoPlayer({ videoId, onOpenModal }: VideoPlayerProps) 
         <div className="text-center p-8 bg-white rounded-xl shadow-md max-w-md">
           <div className="relative w-20 h-20 mx-auto mb-4">
             <Image
-              src="/images/mulakintola-logo.png"
-              alt="Mulakintola Logo"
+              src="/images/drivetube-logo.png"
+              alt="drivetube Logo"
               fill
               className="object-contain"
               priority

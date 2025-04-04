@@ -7,7 +7,7 @@ export const config = {
   port: process.env.PORT || 3333,
   host: process.env.HOST || 'localhost',
   database: {
-    url: process.env.DATABASE_URL || 'mysql://root:@localhost:3306/mulakintola'
+    url: process.env.DATABASE_URL || 'mysql://root:@localhost:3306/drivetube'
   },
   jwt: {
     secret: process.env.JWT_SECRET || 'sua_chave_secreta_muito_segura_aqui',

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS mulakintola;
-USE mulakintola;
+CREATE DATABASE IF NOT EXISTS drivetube;
+USE drivetube;
 
 CREATE TABLE IF NOT EXISTS users (
   id VARCHAR(36) PRIMARY KEY,

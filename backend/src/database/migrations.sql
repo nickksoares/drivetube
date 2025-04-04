@@ -1,8 +1,8 @@
 -- Cria o banco de dados
-CREATE DATABASE IF NOT EXISTS mulakintola;
+CREATE DATABASE IF NOT EXISTS drivetube;
 
 -- Usa o banco de dados
-USE mulakintola;
+USE drivetube;
 
 -- Cria a tabela de usuários
 CREATE TABLE IF NOT EXISTS users (

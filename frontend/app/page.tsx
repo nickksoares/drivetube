@@ -32,8 +32,8 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12">
             <div className="relative w-40 h-40 md:w-48 md:h-48 mb-4">
               <Image
-                src="/images/mulakintola-logo.png"
-                alt="Mulakintola Logo"
+                src="/images/drivetube-logo.png"
+                alt="drivetube Logo"
                 fill
                 className="object-contain"
                 priority
@@ -42,7 +42,7 @@ export default function Home() {
             
             <div className="text-center max-w-2xl px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-6 font-display">
-                mulakintola
+                drivetube
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed">
                 Sua plataforma amigável para visualização de vídeos e cursos do Google Drive, 
@@ -110,8 +110,8 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center space-y-6 md:space-y-8">
           <div className="relative w-28 h-28 md:w-32 md:h-32 mb-2 md:mb-4">
             <Image
-              src="/images/mulakintola-logo.png"
-              alt="Mulakintola Logo"
+              src="/images/drivetube-logo.png"
+              alt="drivetube Logo"
               fill
               className="object-contain"
               priority

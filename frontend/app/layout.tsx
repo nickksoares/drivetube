@@ -6,7 +6,7 @@ import ClientLayout from "./ClientLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "mulakintola",
+  title: "drivetube",
   description: "Interface amigável para visualização de vídeos e cursos do Google Drive",
 };
 

@@ -1,13 +1,13 @@
-# Guia do Desenvolvedor - mulakintola
+# Guia do Desenvolvedor - drivetube
 
-Este guia contém informações técnicas detalhadas para desenvolvedores que desejam contribuir ou personalizar o mulakintola.
+Este guia contém informações técnicas detalhadas para desenvolvedores que desejam contribuir ou personalizar o drivetube.
 
 ## Arquitetura do Projeto
 
 ### Estrutura de Diretórios
 
 ```
-mulakintola/
+drivetube/
 ├── app/
 │   ├── api/
 │   │   ├── auth/
@@ -181,7 +181,7 @@ const logLevels = {
 };
 
 const log = (level: string, message: string, data?: any) => {
-  console[level](`[mulakintola] ${message}`, data);
+  console[level](`[drivetube] ${message}`, data);
 };
 ```
 

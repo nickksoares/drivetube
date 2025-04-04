@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="frontend/assets/img/mulakintola-logo.png" alt="Mulakintola" width="220"/>
+  <img src="frontend/assets/img/drivetube-logo.png" alt="drivetube" width="220"/>
 
-  <h1>Mulakintola</h1>
+  <h1>drivetube</h1>
   
   <p>Interface amigável para visualização de vídeos e cursos armazenados no Google Drive</p>
 
@@ -56,8 +56,8 @@
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/seu-usuario/mulakintola.git
-cd mulakintola
+git clone https://github.com/seu-usuario/drivetube.git
+cd drivetube
 ```
 
 2. **Configure o Backend**
@@ -80,7 +80,7 @@ Edite os arquivos `.env` com suas configurações:
 
 ```env
 # Backend
-DATABASE_URL="mysql://user:password@localhost:3306/mulakintola"
+DATABASE_URL="mysql://user:password@localhost:3306/drivetube"
 JWT_SECRET="seu_jwt_secret"
 
 # Frontend
@@ -109,7 +109,7 @@ Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 ## 📁 Estrutura do Projeto
 
 ```
-mulakintola/
+drivetube/
 ├── 📂 backend/
 │   ├── 📂 src/
 │   │   ├── 📂 controllers/
@@ -143,7 +143,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 💡 Sobre o Projeto
 
-O Mulakintola nasceu da necessidade de uma interface intuitiva para consumo de conteúdo educacional armazenado no Google Drive. Embora o Drive seja excelente para armazenamento, sua interface não é otimizada para visualização sequencial de vídeos e cursos.
+O drivetube nasceu da necessidade de uma interface intuitiva para consumo de conteúdo educacional armazenado no Google Drive. Embora o Drive seja excelente para armazenamento, sua interface não é otimizada para visualização sequencial de vídeos e cursos.
 
 ### 🎯 Objetivos
 
@@ -171,7 +171,7 @@ O Mulakintola nasceu da necessidade de uma interface intuitiva para consumo de c
 <div align="center">
   <p>Desenvolvido com 💛 por <a href="https://github.com/asimovtechsolutions">ASIMOV TECH</a></p>
   
-  <a href="https://github.com/dougdotcon/mulakintola/issues">Reportar Bug</a>
+  <a href="https://github.com/dougdotcon/drivetube/issues">Reportar Bug</a>
   •
-  <a href="https://github.com/dougdotcon/mulakintola/issues">Solicitar Feature</a>
+  <a href="https://github.com/dougdotcon/drivetube/issues">Solicitar Feature</a>
 </div>

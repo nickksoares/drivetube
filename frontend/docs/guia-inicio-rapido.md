@@ -1,6 +1,6 @@
-# Guia de Início Rápido - mulakintola
+# Guia de Início Rápido - drivetube
 
-Este guia irá ajudá-lo a configurar e executar o mulakintola em seu ambiente local.
+Este guia irá ajudá-lo a configurar e executar o drivetube em seu ambiente local.
 
 ## Pré-requisitos
 
@@ -35,7 +35,7 @@ Antes de começar, certifique-se de ter instalado:
 1. Clone o repositório:
    ```bash
    git clone [URL_DO_REPOSITORIO]
-   cd mulakintola
+   cd drivetube
    ```
 
 2. Instale as dependências:

@@ -17,14 +17,14 @@ export function Navbar() {
           <div className="flex items-center space-x-3">
             <div className="relative w-8 h-8">
               <Image
-                src="/images/mulakintola-logo.png"
-                alt="Mulakintola Logo"
+                src="/images/drivetube-logo.png"
+                alt="drivetube Logo"
                 fill
                 className="object-contain"
               />
             </div>
             <Link href="/" className="text-gray-800 text-xl font-bold">
-              mulakintola
+              drivetube
             </Link>
           </div>
 

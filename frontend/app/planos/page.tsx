@@ -156,10 +156,10 @@ export default function PlanosPage() {
             Entre em contato conosco e tire todas as suas dúvidas sobre nossos planos
           </p>
           <a
-            href="mailto:contato@mulakintola.com"
+            href="mailto:contato@drivetube.com"
             className="text-yellow-600 hover:text-yellow-700 font-medium"
           >
-            contato@mulakintola.com
+            contato@drivetube.com
           </a>
         </div>
       </div>

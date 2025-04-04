@@ -16,12 +16,12 @@ services:
       - DB_PORT=5432
       - DB_USER=postgres
       - DB_PASS=postgres
-      - DB_NAME=mulakintola
+      - DB_NAME=drivetube
     volumes:
       - ./backend:/app
       - /app/node_modules
     networks:
-      - mulakintola-network
+      - drivetube-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3333/health"]
       interval: 30s
@@ -46,7 +46,7 @@ services:
     depends_on:
       - backend
     networks:
-      - mulakintola-network
+      - drivetube-network
 
   postgres:
     image: postgres:14
@@ -55,7 +55,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=mulakintola
+      - POSTGRES_DB=drivetube
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -63,5 +63,5 @@ volumes:
   postgres_data:
 
 networks:
-  mulakintola-network:
+  drivetube-network:
     driver: bridge 

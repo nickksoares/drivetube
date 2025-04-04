@@ -1,7 +1,7 @@
-# Mulakintola - Documentação de Funcionalidades
+# drivetube - Documentação de Funcionalidades
 
 ## 🎯 Visão Geral
-O Mulakintola é uma plataforma para visualização de vídeos e cursos armazenados no Google Drive, oferecendo uma interface amigável e intuitiva para acesso ao conteúdo educacional.
+O drivetube é uma plataforma para visualização de vídeos e cursos armazenados no Google Drive, oferecendo uma interface amigável e intuitiva para acesso ao conteúdo educacional.
 
 ## 📱 Telas Disponíveis
 
@@ -9,7 +9,7 @@ O Mulakintola é uma plataforma para visualização de vídeos e cursos armazena
 - **Status**: ✅ Implementada
 - **Funcionalidades**:
   - Layout responsivo com gradiente amarelo suave
-  - Logo do Mulakintola
+  - Logo do drivetube
   - Título e descrição da plataforma
   - Botão de login com Google
   - Cards informativos sobre a plataforma:
@@ -31,7 +31,7 @@ O Mulakintola é uma plataforma para visualização de vídeos e cursos armazena
 ### 3. Navbar (Componente Global)
 - **Status**: ✅ Implementada
 - **Funcionalidades**:
-  - Logo do Mulakintola
+  - Logo do drivetube
   - Link para página inicial
   - Menu do usuário (quando logado):
     - Exibição do avatar/inicial do usuário
