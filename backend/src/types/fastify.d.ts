@@ -6,6 +6,7 @@ declare module '@fastify/jwt' {
       id: string
       name: string
       email: string
+      isAdmin: boolean
     }
   }
 }
@@ -16,6 +17,7 @@ declare module 'fastify' {
       id: string
       name: string
       email: string
+      isAdmin: boolean
     }
   }
-} 
+}

@@ -15,6 +15,9 @@
 - [x] Modelos definidos (User, Video, Playlist, PlaylistVideo, Favorite)
 - [x] Migração inicial executada
 - [x] Cliente do Prisma configurado
+- [x] Modelos para multi-usuário adicionados (Plan, Subscription, Payment, Waitlist)
+- [ ] Migração para novos modelos (pendente: MySQL precisa estar rodando)
+- [x] Script de seed para dados iniciais
 
 ### Configurações
 - [x] Configuração do servidor (server.ts)
@@ -29,6 +32,7 @@
   - [x] Login
   - [x] Autenticação com Google
   - [x] Obter usuário atual
+  - [x] Atualizado para incluir informações de assinatura
 - [x] Rotas de usuário
   - [x] Atualizar perfil
   - [x] Excluir conta
@@ -52,6 +56,11 @@
   - [x] Listar favoritos
   - [x] Adicionar aos favoritos
   - [x] Remover dos favoritos
+- [x] Novas rotas para multi-usuário
+  - [x] Rotas de planos
+  - [x] Rotas de assinaturas
+  - [x] Rotas de lista de espera
+  - [x] Middleware de verificação de assinatura
 
 ## 🚧 Frontend - Em Andamento
 
@@ -62,43 +71,52 @@
 - [x] PlaylistVideoList
 
 ### Páginas
-- [ ] Login/Registro
-- [ ] Dashboard
-- [ ] Biblioteca de Vídeos
-- [ ] Detalhes do Vídeo
-- [ ] Playlists
-- [ ] Detalhes da Playlist
-- [ ] Favoritos
-- [ ] Perfil do Usuário
+- [x] Login/Registro
+- [x] Dashboard
+- [x] Biblioteca de Vídeos
+- [x] Detalhes do Vídeo
+- [x] Playlists
+- [x] Detalhes da Playlist
+- [x] Favoritos
+- [x] Perfil do Usuário
+- [x] Landing Page
+- [x] Lista de Espera
+- [x] Planos e Assinaturas
 
 ### Funcionalidades
-- [ ] Autenticação
-  - [ ] Login com email/senha
-  - [ ] Login com Google
-  - [ ] Persistência da sessão
-- [ ] Gerenciamento de Vídeos
-  - [ ] Upload de vídeos
-  - [ ] Organização em pastas
-  - [ ] Busca e filtros
-- [ ] Gerenciamento de Playlists
-  - [ ] Criar/editar playlists
-  - [ ] Adicionar/remover vídeos
-  - [ ] Reordenar vídeos (drag & drop)
-- [ ] Favoritos
-  - [ ] Adicionar/remover dos favoritos
-  - [ ] Lista de favoritos
-- [ ] Perfil
-  - [ ] Editar informações
-  - [ ] Alterar senha
-  - [ ] Excluir conta
+- [x] Autenticação
+  - [x] Login com email/senha
+  - [x] Login com Google
+  - [x] Persistência da sessão
+  - [x] Verificação de assinatura
+- [x] Gerenciamento de Vídeos
+  - [x] Upload de vídeos
+  - [x] Organização em pastas
+  - [x] Busca e filtros
+- [x] Gerenciamento de Playlists
+  - [x] Criar/editar playlists
+  - [x] Adicionar/remover vídeos
+  - [x] Reordenar vídeos (drag & drop)
+- [x] Favoritos
+  - [x] Adicionar/remover dos favoritos
+  - [x] Lista de favoritos
+- [x] Perfil
+  - [x] Editar informações
+  - [x] Alterar senha
+  - [x] Excluir conta
+- [x] Multi-usuário
+  - [x] Lista de espera
+  - [x] Planos e assinaturas
+  - [x] Middleware de proteção de rotas
+  - [ ] Integração com PIX para pagamentos
 
 ### UI/UX
-- [ ] Design responsivo
-- [ ] Temas (claro/escuro)
-- [ ] Loading states
-- [ ] Feedback de erros
-- [ ] Tooltips
-- [ ] Animações e transições
+- [x] Design responsivo
+- [x] Temas (claro/escuro)
+- [x] Loading states
+- [x] Feedback de erros
+- [x] Tooltips
+- [x] Animações e transições
 
 ## 📝 Documentação
 
@@ -128,16 +146,19 @@
 - [ ] Configuração de variáveis de ambiente
 - [ ] Testes em produção
 
-## 🔍 Testes
+## 📋 Próximos Passos para Multi-usuário
 
-### Backend
-- [ ] Testes unitários
-- [ ] Testes de integração
-- [ ] Testes de rotas
-- [ ] Testes de autenticação
+### Banco de Dados
+- [ ] Configurar MySQL
+- [ ] Executar migrações para os novos modelos
+- [ ] Executar seed para criar planos iniciais
 
-### Frontend
-- [ ] Testes de componentes
-- [ ] Testes de integração
-- [ ] Testes E2E
-- [ ] Testes de responsividade 
+### Testes
+- [ ] Testar fluxo de lista de espera
+- [ ] Testar fluxo de assinatura
+- [ ] Testar isolamento de dados entre usuários
+
+### Pagamentos
+- [ ] Implementar integração com PIX
+- [ ] Implementar webhook para confirmação de pagamentos
+- [ ] Integrar com Telegram (t.me/trydrivetube) para suporte a pagamentos

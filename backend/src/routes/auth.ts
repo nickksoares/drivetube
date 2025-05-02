@@ -38,7 +38,8 @@ export async function authRoutes(app: FastifyInstance) {
       const token = app.jwt.sign({
         id: user.id,
         name: user.name,
-        email: user.email
+        email: user.email,
+        isAdmin: user.isAdmin
       })
 
       return reply.send({
@@ -47,7 +48,8 @@ export async function authRoutes(app: FastifyInstance) {
           id: user.id,
           name: user.name,
           email: user.email,
-          avatarUrl: user.avatarUrl
+          avatarUrl: user.avatarUrl,
+          isAdmin: user.isAdmin
         }
       })
     } catch (error: any) {
@@ -82,12 +84,28 @@ export async function authRoutes(app: FastifyInstance) {
         })
       }
 
+      // Atualiza o último login
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { lastLoginAt: new Date() }
+      })
+
       // Gera o token JWT
       const token = app.jwt.sign({
         id: user.id,
         name: user.name,
-        email: user.email
+        email: user.email,
+        isAdmin: user.isAdmin
       })
+
+      // Verifica se o usuário tem uma assinatura ativa
+      const subscription = await prisma.subscription.findUnique({
+        where: { userId: user.id },
+        include: { plan: true }
+      })
+
+      const hasActiveSubscription = subscription?.status === 'active' &&
+                                   (subscription.endDate ? new Date(subscription.endDate) > new Date() : true)
 
       return reply.send({
         token,
@@ -95,7 +113,11 @@ export async function authRoutes(app: FastifyInstance) {
           id: user.id,
           name: user.name,
           email: user.email,
-          avatarUrl: user.avatarUrl
+          avatarUrl: user.avatarUrl,
+          isAdmin: user.isAdmin,
+          planId: user.planId,
+          plan: subscription?.plan,
+          hasActiveSubscription
         }
       })
     } catch (error: any) {
@@ -141,12 +163,28 @@ export async function authRoutes(app: FastifyInstance) {
         })
       }
 
+      // Atualiza o último login
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { lastLoginAt: new Date() }
+      })
+
       // Gera o token JWT
       const jwtToken = app.jwt.sign({
         id: user.id,
         name: user.name,
-        email: user.email
+        email: user.email,
+        isAdmin: user.isAdmin
       })
+
+      // Verifica se o usuário tem uma assinatura ativa
+      const subscription = await prisma.subscription.findUnique({
+        where: { userId: user.id },
+        include: { plan: true }
+      })
+
+      const hasActiveSubscription = subscription?.status === 'active' &&
+                                   (subscription.endDate ? new Date(subscription.endDate) > new Date() : true)
 
       return reply.send({
         token: jwtToken,
@@ -154,7 +192,11 @@ export async function authRoutes(app: FastifyInstance) {
           id: user.id,
           name: user.name,
           email: user.email,
-          avatarUrl: user.avatarUrl
+          avatarUrl: user.avatarUrl,
+          isAdmin: user.isAdmin,
+          planId: user.planId,
+          plan: subscription?.plan,
+          hasActiveSubscription
         }
       })
     } catch (error: any) {
@@ -170,13 +212,26 @@ export async function authRoutes(app: FastifyInstance) {
       where: { id: request.user.id }
     })
 
+    // Verifica se o usuário tem uma assinatura ativa
+    const subscription = await prisma.subscription.findUnique({
+      where: { userId: request.user.id },
+      include: { plan: true }
+    })
+
+    const hasActiveSubscription = subscription?.status === 'active' &&
+                                 (subscription.endDate ? new Date(subscription.endDate) > new Date() : true)
+
     return {
       user: {
         id: user!.id,
         name: user!.name,
         email: user!.email,
-        avatarUrl: user!.avatarUrl
+        avatarUrl: user!.avatarUrl,
+        isAdmin: user!.isAdmin,
+        planId: user!.planId,
+        plan: subscription?.plan,
+        hasActiveSubscription
       }
     }
   })
-} 
+}

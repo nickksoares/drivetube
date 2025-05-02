@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { Plan } from './subscription'
 
 export interface User {
   id: string
@@ -8,6 +9,10 @@ export interface User {
   avatarUrl?: string
   createdAt: Date
   updatedAt: Date
+  lastLoginAt?: Date
+  isAdmin: boolean
+  planId?: string
+  plan?: Plan
 }
 
 export interface UserRegisterData {
@@ -28,6 +33,11 @@ export interface UserResponse {
   avatarUrl?: string
   createdAt: Date
   updatedAt: Date
+  lastLoginAt?: Date
+  isAdmin: boolean
+  planId?: string
+  plan?: Plan
+  hasActiveSubscription?: boolean
 }
 
 export const loginSchema = z.object({
@@ -51,4 +61,4 @@ export const updateUserSchema = z.object({
 
 export type LoginData = z.infer<typeof loginSchema>
 export type RegisterData = z.infer<typeof registerSchema>
-export type UpdateUserData = z.infer<typeof updateUserSchema> 
+export type UpdateUserData = z.infer<typeof updateUserSchema>

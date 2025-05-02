@@ -42,14 +42,14 @@ export default function Modal({ isOpen, onClose, title, children, className }: M
             >
               <Dialog.Panel
                 className={cn(
-                  'w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all',
+                  'w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-gray-800 p-6 text-left align-middle shadow-xl transition-all',
                   className
                 )}
               >
                 {title && (
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900 mb-4"
+                    className="text-lg font-medium leading-6 text-gray-900 dark:text-white mb-4"
                   >
                     {title}
                   </Dialog.Title>
@@ -57,7 +57,7 @@ export default function Modal({ isOpen, onClose, title, children, className }: M
 
                 <button
                   type="button"
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-500"
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
                   onClick={onClose}
                 >
                   <span className="sr-only">Fechar</span>
@@ -72,4 +72,4 @@ export default function Modal({ isOpen, onClose, title, children, className }: M
       </Dialog>
     </Transition>
   )
-} 
+}

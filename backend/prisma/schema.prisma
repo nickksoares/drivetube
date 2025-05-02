@@ -5,6 +5,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Seed configuration
+generator seed {
+  provider = "ts-node prisma/seed.ts"
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
@@ -19,11 +24,16 @@ model User {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
   lastLoginAt   DateTime?
+  isAdmin       Boolean  @default(false)
+  planId        String?
+  plan          Plan?    @relation(fields: [planId], references: [id])
   folders       Folder[]
 
-  videos    Video[]
-  playlists Playlist[]
-  favorites Favorite[]
+  videos       Video[]
+  playlists    Playlist[]
+  favorites    Favorite[]
+  subscription Subscription?
+  waitlist     Waitlist?
 
   @@map("users")
 }
@@ -103,4 +113,71 @@ model Favorite {
   @@id([userId, videoId])
   @@index([videoId])
   @@map("favorites")
-} 
+}
+
+model Plan {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  price       Float
+  interval    String   @default("month") // month, year
+  features    String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  users        User[]
+  subscriptions Subscription[]
+
+  @@map("plans")
+}
+
+model Subscription {
+  id            String   @id @default(uuid())
+  userId        String   @unique @map("user_id")
+  planId        String   @map("plan_id")
+  status        String   @default("active") // active, canceled, expired
+  startDate     DateTime @default(now()) @map("start_date")
+  endDate       DateTime? @map("end_date")
+  lastPaymentId String?  @map("last_payment_id")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan          Plan     @relation(fields: [planId], references: [id])
+  payments      Payment[]
+
+  @@index([planId])
+  @@map("subscriptions")
+}
+
+model Payment {
+  id             String   @id @default(uuid())
+  subscriptionId String   @map("subscription_id")
+  amount         Float
+  paymentMethod  String   @default("pix") @map("payment_method")
+  status         String   @default("pending") // pending, completed, failed
+  pixCode        String?  @map("pix_code")
+  pixExpiration  DateTime? @map("pix_expiration")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  @@index([subscriptionId])
+  @@map("payments")
+}
+
+model Waitlist {
+  id        String   @id @default(uuid())
+  userId    String?  @unique @map("user_id")
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now()) @map("created_at")
+  status    String   @default("pending") // pending, approved, rejected
+  notes     String?
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("waitlist")
+}
