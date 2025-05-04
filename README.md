@@ -171,7 +171,7 @@ drivetube/
 
 ## 📝 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença GNU Affero General Public License v3.0 (AGPL-3.0). Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 💡 Sobre o Projeto
 
