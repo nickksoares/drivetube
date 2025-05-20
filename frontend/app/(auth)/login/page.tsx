@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useAuth } from '../../hooks/useAuth'
 import { GoogleLogin } from '@react-oauth/google'
+import { signIn } from 'next-auth/react';
 
 export default function LoginPage() {
   const router = useRouter()
@@ -58,6 +59,11 @@ export default function LoginPage() {
             crie uma conta gratuita
           </Link>
         </p>
+      </div>
+      <div>
+        <button onClick={() => signIn('google')}>
+          Entrar com Google
+        </button>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -155,4 +161,4 @@ export default function LoginPage() {
       </div>
     </div>
   )
-} 
+}

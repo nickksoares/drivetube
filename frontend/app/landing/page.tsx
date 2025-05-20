@@ -50,14 +50,14 @@ export default function LandingPage() {
                 O drivetube transforma seus vídeos do Google Drive em uma plataforma de streaming profissional. Organize, assista e compartilhe seus conteúdos com facilidade.
               </p>
               <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link 
-                  href="/waitlist" 
+                <Link
+                  href="/waitlist"
                   className="px-8 py-3 bg-yellow-400 text-gray-900 font-medium rounded-xl shadow-md hover:bg-yellow-500 transition-colors"
                 >
                   Entrar na lista de espera
                 </Link>
-                <Link 
-                  href="/login" 
+                <Link
+                  href="/login"
                   className="px-8 py-3 bg-white text-gray-900 font-medium rounded-xl shadow-md hover:bg-gray-50 transition-colors"
                 >
                   Fazer login

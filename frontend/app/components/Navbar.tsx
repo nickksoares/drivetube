@@ -105,9 +105,8 @@ export function Navbar() {
                         {({ active }) => (
                           <Link
                             href="/config"
-                            className={`${
-                              active ? 'bg-gray-100 dark:bg-gray-700' : ''
-                            } block px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
+                            className={`${active ? 'bg-gray-100 dark:bg-gray-700' : ''
+                              } block px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
                           >
                             Configurações
                           </Link>
@@ -117,9 +116,8 @@ export function Navbar() {
                         {({ active }) => (
                           <Link
                             href="/planos"
-                            className={`${
-                              active ? 'bg-gray-100 dark:bg-gray-700' : ''
-                            } block px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
+                            className={`${active ? 'bg-gray-100 dark:bg-gray-700' : ''
+                              } block px-4 py-2 text-sm text-gray-700 dark:text-gray-300`}
                           >
                             Minha Assinatura
                           </Link>
@@ -129,9 +127,8 @@ export function Navbar() {
                         {({ active }) => (
                           <button
                             onClick={() => signOut()}
-                            className={`${
-                              active ? 'bg-gray-100 dark:bg-gray-700' : ''
-                            } block w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 text-left`}
+                            className={`${active ? 'bg-gray-100 dark:bg-gray-700' : ''
+                              } block w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 text-left`}
                           >
                             Sair
                           </button>

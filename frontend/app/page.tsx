@@ -39,19 +39,19 @@ export default function Home() {
                 priority
               />
             </div>
-            
+
             <div className="text-center max-w-2xl px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-6 font-display">
                 drivetube
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed">
-                Sua plataforma amigável para visualização de vídeos e cursos do Google Drive, 
+                Sua plataforma amigável para visualização de vídeos e cursos do Google Drive,
                 tornando o aprendizado mais fácil e acessível.
               </p>
-              
+
               <div className="relative">
-                <button
-                  onClick={() => signIn('google')}
+                <Link
+                  href="/(auth)/login"
                   className="px-6 py-3 md:px-8 md:py-4 bg-yellow-400 text-gray-800 rounded-2xl hover:bg-yellow-500 
                            transition-all duration-300 transform hover:scale-105 shadow-lg
                            flex items-center space-x-3 mx-auto font-medium text-base md:text-lg"
@@ -62,8 +62,8 @@ export default function Home() {
                       d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"
                     />
                   </svg>
-                  <span>Entrar com Google</span>
-                </button>
+                  <span>Fazer login</span>
+                </Link>
               </div>
             </div>
 
@@ -117,7 +117,7 @@ export default function Home() {
               priority
             />
           </div>
-          
+
           <div className="text-center max-w-2xl px-4">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">
               Bem-vindo, {session.user?.name}!
@@ -125,7 +125,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">
               Seus vídeos e cursos estão esperando por você
             </p>
-            
+
             <Link
               href="/videos"
               className="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-yellow-400 text-gray-800 rounded-2xl
@@ -152,4 +152,4 @@ export default function Home() {
       </div>
     </div>
   );
-} 
+}

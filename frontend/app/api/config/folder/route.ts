@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
     }
 
     const folderData = await response.json()
-    
+
     if (folderData.mimeType !== 'application/vnd.google-apps.folder') {
       return NextResponse.json(
         { error: 'O ID fornecido não é de uma pasta' },
@@ -66,7 +66,9 @@ export async function POST(req: NextRequest) {
       message: 'Pasta configurada com sucesso',
       folder: {
         id: folderData.id,
-        name: folderData.name
+        name: folderData.name,
+        files: [],
+        subfolders: []
       }
     })
   } catch (error: any) {

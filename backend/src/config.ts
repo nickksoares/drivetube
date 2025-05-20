@@ -6,6 +6,7 @@ dotenv.config()
 export const config = {
   port: process.env.PORT || 3333,
   host: process.env.HOST || 'localhost',
+  frontendUrl: process.env.FRONTEND_URL || 'http://localhost:3000',
   database: {
     url: process.env.DATABASE_URL || 'mysql://root:@localhost:3306/drivetube'
   },
@@ -19,4 +20,4 @@ export const config = {
     redirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3333/auth/google/callback',
     driveFolderId: process.env.GOOGLE_DRIVE_FOLDER_ID || ''
   }
-} 
+}

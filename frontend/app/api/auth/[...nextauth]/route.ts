@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
       if (account) {
         token.accessToken = account.access_token;
 
-        // Fetch user subscription status from our API
+
         try {
           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`, {
             headers: {

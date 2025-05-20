@@ -6,9 +6,6 @@ generator client {
 }
 
 // Seed configuration
-generator seed {
-  provider = "ts-node prisma/seed.ts"
-}
 
 datasource db {
   provider = "mysql"

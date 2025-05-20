@@ -2,22 +2,23 @@ import { FastifyInstance } from 'fastify'
 import cors from '@fastify/cors'
 import { videoRoutes } from './routes/videos'
 import { authRoutes } from './routes/auth'
-import { configRoutes } from './routes/config'
+import fastify from 'fastify'
+import { config } from './config'
 
 export async function createServer(): Promise<FastifyInstance> {
-  const app = require('fastify')({
-    logger: true
-  })
+  const app = fastify({ logger: true })
 
   await app.register(cors, {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: config.frontendUrl,
     credentials: true
   })
+
+  console.log('📦 Registrando rotas...')
 
   // Rotas
   app.register(videoRoutes, { prefix: '/api/videos' })
   app.register(authRoutes, { prefix: '/api/auth' })
-  app.register(configRoutes, { prefix: '/api/config' })
+
 
   return app
-} 
+}
